@@ -30,10 +30,35 @@ body {
   width: 1200px;
 }
 
+.topDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bottomDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 h1 {
   text-align: center;
 }
 
 label {
   font-size: 15px;
+  padding-right: 20px;
+}
+
+textarea {
+  margin-top: 20px;
+  height: 300px;
+  width: 600px;
+}
+
+button {
+  border: 1px solid #ffd571;
+  font-family: 'Star Jedi';
+  margin-top: 20px;
+  position: relative;
+  left: 45%;
 }

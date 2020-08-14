@@ -56,16 +56,19 @@ export default class FormData extends Component {
             <div>
                 <h1>Pilot Pre-Flight Form</h1>
                 <form>
-                    <label>Enter your name, Pilot:</label><br />
-                    <input type="text" />
-                    <hr />
-                    <label>Enter your departure date:</label><br />
-                    <input type="date" />
+                    <div className="topDiv">
+                        <div><label>Enter your name, Pilot:</label><br />
+                            <input type="text" /></div>
+                        <div><label>Enter your departure date:</label><br />
+                            <input type="date" /></div>
+                    </div>
                     <hr />
                     <label>Choose your allegiance:</label>
                     {/* Criteria: Allow user to only select one radio input -
                     Solution: Sharing names for radio inputs creates a group and allows only one to be selected */}
+                    <br />
                     <input type="radio" name="allegiance" value="Jedi" /> <Icon icon={jediOrder} width="1em" height="1em" />Jedi
+                    <br />
                     <input type="radio" name="allegiance" value="Sith" /> <Icon icon={sithIcon} width="1em" height="1em" /> Sith
                     <hr />
                     <label>Select your starship:</label>
@@ -73,10 +76,20 @@ export default class FormData extends Component {
                         {this.optionsRender()}
                     </select>
                     <hr />
-                    <label>Choose your targets:</label>
-                    {this.state.planets.map(planet => {
-                        return <Checkbox name={planet.name} />
-                    })}
+                    <div className="bottomDiv">
+                        <div>
+                            <label>Choose your targets: ( Select all that apply )</label>
+                            {this.state.planets.map(planet => {
+                                return <Checkbox name={planet.name} />
+                            })}
+                        </div>
+
+                        <div>
+                            <label>Final Words (in case of emergency)</label> <br />
+                            <textarea />
+                        </div>
+                    </div>
+                    <button>Submit Form</button>
                 </form>
             </div>
         )

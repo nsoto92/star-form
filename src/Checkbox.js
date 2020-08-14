@@ -2,9 +2,10 @@ import React from 'react'
 
 export const CheckBox = props => {
     return (
-        <li>
+        <div>
             <input type="checkbox" /> {props.name}
-        </li>
+        </div>
+
     )
 }
 
