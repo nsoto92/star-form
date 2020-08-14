@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Star Jedi';
+  src: url('./assets/Starjedi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url(./assets/giphy.gif);
+  background-repeat: repeat;
+}
+
+.container {
+  margin: auto;
+  background: whitesmoke;
+  width: 1200px;
+}
+
+label {
+  font-family:'Star Jedi';
+  font-size: 15px;
+}
