@@ -16,17 +16,24 @@ html {
 }
 
 body {
+  font-family: 'Star Jedi';
+  color: #ffd571;
   background-image: url(./assets/giphy.gif);
   background-repeat: repeat;
 }
 
 .container {
-  margin: auto;
-  background: whitesmoke;
+  padding: 25px;
+  margin: 50px auto;
+  border: 2px solid #ffd571;
+  background: #56556e;
   width: 1200px;
 }
 
+h1 {
+  text-align: center;
+}
+
 label {
-  font-family:'Star Jedi';
   font-size: 15px;
 }
