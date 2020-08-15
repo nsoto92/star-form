@@ -3,36 +3,35 @@ import axios from 'axios'
 import Form from './Form'
 
 
+
 export default class FormData extends Component {
     state = {
         show: false,
         starships: [],
-        planets: [],
         name: '',
         email: '',
         date: '',
         phone: '',
         allegiance: '',
         vehicle: '',
+        targets: [],
         Tatooine: false,
         Alderaan: false,
         YavinIV: false,
         Hoth: false,
         Dagobah: false,
-        Bespin: false,
         Endor: false,
         Naboo: false,
         Coruscant: false,
-        Kamino: false,
         final: ''
 
     }
 
     handleChange = (event) => {
-        const { name, value, type } = event.target
+        const { name, value, type, checked } = event.target
         type === "checkbox" ?
             this.setState({
-                [name]: true
+                [name]: checked
             })
             :
             this.setState({
@@ -40,17 +39,54 @@ export default class FormData extends Component {
             })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.setState(prevState => ({
+            targets: [...prevState.targets,
+            [{
+                name: this.state.name,
+                email: this.state.email,
+                date: this.state.date,
+                phone: this.state.phone,
+                allegiance: this.state.allegiance,
+                vehicle: this.state.vehicle,
+                Tatooine: this.state.Tatooine,
+                Alderaan: this.state.Alderaan,
+                YavinIV: this.state.YavinIV,
+                Hoth: this.state.Hoth,
+                Dagobah: this.state.Dagobah,
+                Endor: this.state.Endor,
+                Naboo: this.state.Naboo,
+                Coruscant: this.state.Coruscant,
+                final: this.state.final
+            }]]
+        }))
+        this.setState({
+            name: '',
+            email: '',
+            date: '',
+            phone: '',
+            allegiance: '',
+            vehicle: '',
+            Tatooine: false,
+            Alderaan: false,
+            YavinIV: false,
+            Hoth: false,
+            Dagobah: false,
+            Endor: false,
+            Naboo: false,
+            Coruscant: false,
+            final: ''
+        })
+    }
+
     componentDidMount() {
-        axios.all([
-            axios.get('https://swapi.dev/api/starships'),
-            axios.get('https://swapi.dev/api/planets')
-        ])
-            .then(axios.spread((shipRes, planetRes) => {
+        axios.get('https://swapi.dev/api/starships')
+            .then((shipRes) => {
                 this.setState({
-                    starships: shipRes.data.results,
-                    planets: planetRes.data.results
+                    starships: shipRes.data.results
                 })
-            }))
+            })
         setTimeout(() => {
             this.setState({
                 show: true
@@ -71,14 +107,18 @@ export default class FormData extends Component {
     }
 
     render() {
+        console.log(this.state.targets)
         const { show } = this.state
         return (
             show &&
-            <Form
-                handleChange={this.handleChange}
-                optionsRender={this.optionsRender}
-                data={this.state}
-            />
+            <div>
+                <Form
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                    optionsRender={this.optionsRender}
+                    data={this.state}
+                />
+            </div>
         )
     }
 }
