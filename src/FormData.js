@@ -5,8 +5,39 @@ import Form from './Form'
 
 export default class FormData extends Component {
     state = {
+        show: false,
         starships: [],
-        planets: []
+        planets: [],
+        name: '',
+        email: '',
+        date: '',
+        phone: '',
+        allegiance: '',
+        vehicle: '',
+        Tatooine: false,
+        Alderaan: false,
+        YavinIV: false,
+        Hoth: false,
+        Dagobah: false,
+        Bespin: false,
+        Endor: false,
+        Naboo: false,
+        Coruscant: false,
+        Kamino: false,
+        final: ''
+
+    }
+
+    handleChange = (event) => {
+        const { name, value, type } = event.target
+        type === "checkbox" ?
+            this.setState({
+                [name]: true
+            })
+            :
+            this.setState({
+                [name]: value
+            })
     }
 
     componentDidMount() {
@@ -20,6 +51,11 @@ export default class FormData extends Component {
                     planets: planetRes.data.results
                 })
             }))
+        setTimeout(() => {
+            this.setState({
+                show: true
+            })
+        }, 1500)
 
     }
 
@@ -29,14 +65,17 @@ export default class FormData extends Component {
             starships &&
             starships.length > 0 &&
             starships.map(ship => {
-                return <option>{ship.name}</option>
+                return <option value={ship.name}>{ship.name}</option>
             })
         )
     }
 
     render() {
+        const { show } = this.state
         return (
+            show &&
             <Form
+                handleChange={this.handleChange}
                 optionsRender={this.optionsRender}
                 data={this.state}
             />

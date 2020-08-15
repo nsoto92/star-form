@@ -6,31 +6,36 @@
   font-display: swap;
 }
 
-html {
-  box-sizing: border-box;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
 
 body {
-  font-family: 'Star Jedi';
-  color: #ffd571;
-  background-image: url(./assets/giphy.gif);
-  background-repeat: repeat;
+  margin: auto;
+  background-color: black;
+}
+
+.star {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: white;
 }
 
 .container {
+  color: #ffd571;
+  font-family: 'Star Jedi';
   padding: 25px;
   margin: 50px auto;
   border: 2px solid #ffd571;
   background: #56556e;
+  opacity: 90%;
   width: 1200px;
 }
 
 .topDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.midDiv {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -44,9 +49,14 @@ h1 {
   text-align: center;
 }
 
+input{
+  margin-bottom: 20px;
+}
+
 label {
   font-size: 15px;
   padding-right: 20px;
+  margin-bottom: 20px;
 }
 
 textarea {
@@ -55,10 +65,14 @@ textarea {
   width: 600px;
 }
 
+textarea, select, input {
+  font-family: 'Star Jedi';
+}
+
 button {
   border: 1px solid #ffd571;
   font-family: 'Star Jedi';
-  margin-top: 20px;
+  margin-top: 50px;
   position: relative;
   left: 45%;
 }
