@@ -95,6 +95,7 @@ export default function Form(props) {
                                 value="Jedi"
                                 checked={props.data.allegiance === "Jedi"}
                                 onChange={props.handleChange}
+                                required
                             />
                             <Icon icon={jediOrder} width="1em" height="1em" /> Jedi
                     <br />
@@ -105,6 +106,7 @@ export default function Form(props) {
                                 value="Sith"
                                 checked={props.data.allegiance === "Sith"}
                                 onChange={props.handleChange}
+                                required
                             />
                             <Icon icon={sithIcon} width="1em" height="1em" /> Sith
                     </div>
@@ -191,7 +193,7 @@ export default function Form(props) {
 
                         <div className="finalWords">
                             <label>
-                                Final Words (in case of emergency)
+                                Final Words (click middle) -
                             </label>
                             <br />
                             <textarea

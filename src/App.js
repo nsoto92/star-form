@@ -28,8 +28,8 @@ function getRandomPosition() {
 function App() {
   return (
     <div>
-      {/* <SWCrawl /> */}
       <FormData />
+      <SWCrawl />
     </div>
   );
 }

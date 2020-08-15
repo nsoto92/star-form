@@ -11,9 +11,7 @@ export default function SWCrawl() {
                 A long time ago, in a galaxy far,<br /> far away....
             </section>
 
-            <section class="logo">
-                <img src='https://raw.githubusercontent.com/gist/christopherkade/97fd94f20c3a4ffddfa5aba46261082f/raw/c4095f36fdf4cd35384a0a73bd9fbc538c31aac1/logo.svg' alt="logo" />
-            </section>
+
 
             <div id="board">
                 <div id="content">

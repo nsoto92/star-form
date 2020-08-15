@@ -91,15 +91,13 @@ export default class FormData extends Component {
             this.setState({
                 show: true
             })
-        }, 1500)
+        }, 42000)
 
     }
 
     optionsRender = () => {                     //Renders options once axios call gets results
         const { starships } = this.state
         return (
-            starships &&
-            starships.length > 0 &&
             starships.map(ship => {
                 return <option value={ship.name}>{ship.name}</option>
             })

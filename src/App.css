@@ -28,6 +28,7 @@ body {
   background: #56556e;
   opacity: 90%;
   width: 1200px;
+  z-index: 0;
 }
 
 .receiptContainer {
@@ -44,6 +45,16 @@ body {
 .topDiv {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 600px;
+}
+
+.topDiv2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 50px;
+  margin-top: 50px;
+   border: 1px solid #ffd571;
+   padding: 15px; 
 }
 
 .midDiv {
@@ -92,4 +103,8 @@ button {
 .finalWords {
   border-left: 1px white solid;
   text-align: center;
+}
+
+.receiptP {
+  font-size: 12px;
 }
