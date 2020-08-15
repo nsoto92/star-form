@@ -91,7 +91,7 @@ export default class FormData extends Component {
             this.setState({
                 show: true
             })
-        }, 42000)
+        }, 58000)
 
     }
 

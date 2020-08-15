@@ -193,7 +193,7 @@ export default function Form(props) {
 
                         <div className="finalWords">
                             <label>
-                                Final Words (click middle) -
+                                Final Words (click middle to compose) -
                             </label>
                             <br />
                             <textarea
@@ -205,7 +205,7 @@ export default function Form(props) {
                     </div>
                     <button>Submit Form</button>
                     <br />
-                    <p style={{ textAlign: 'center', color: '#ffd571' }}>(Scroll for Receipt at Bottom)</p>
+                    <p style={{ textAlign: 'center', color: '#ffd571', fontSize: '12px' }}>(Scroll for Receipt at Bottom)</p>
                 </form>
             </div>
             {readyReceipt}
